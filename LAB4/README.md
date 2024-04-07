@@ -1,6 +1,6 @@
 # Лабораторная работа № 4. Настройка IPv6-адресов на сетевых устройствах
 
-! Lab4 (https://github.com/IvShikov/OtusLab/blob/main/LAB4/Lab4_Topology%20and%20table.JPG)
+! [Lab4_Topology and table.JPG](https://github.com/IvShikov/OtusLab/blob/main/LAB4/Lab4_Topology%20and%20table.JPG)
 
 # Задачи:
 ## Часть 1. Настройка топологии и конфигурация основных параметров маршрутизатора и коммутатора
