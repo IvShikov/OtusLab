@@ -39,11 +39,11 @@
 ##### Эхо-запрос от коммутатора S1 на коммутатор S3 выполняется успешно.
 ##### Эхо-запрос от коммутатора S2 на коммутатор S3 выполняется успешно.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P1_S4a.JPG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P1_S4b.JPG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P1_S4c.JPG)
 #
 ### Часть 2. Выбор корневого моста
 Для каждого экземпляра протокола spanning-tree (коммутируемая сеть LAN или широковещательный домен) существует коммутатор, выделенный в качестве корневого моста. Корневой мост служит точкой привязки для всех расчётов протокола spanning-tree, позволяя определить избыточные пути, которые следует заблокировать.
@@ -74,11 +74,11 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P2_S4_example2.PNG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P2_S1-4a.JPG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P2_S1-4b.JPG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB7/Lab7_P2_S1-4c.JPG)
 
 ###### Примечание. Режим STP по умолчанию на коммутаторе 2960 — протокол STP для каждой сети VLAN (PVST).
 В схему ниже записали роль и состояние (Sts) активных портов на каждом коммутаторе в топологии.
