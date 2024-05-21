@@ -1,6 +1,6 @@
 # Лабораторная работа №8. Настройка DHCPv6
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_Topology.JPG)
 
 # Задачи:
 
