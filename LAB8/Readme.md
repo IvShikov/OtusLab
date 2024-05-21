@@ -173,7 +173,7 @@ R1(config-dhcp)# domain-name STATEFUL.com
 R1(config)# interface g0/0/0
 R1(config-if)# ipv6 dhcp server R2-STATEFUL
 
-## Часть 5. Настройка и проверка ретрансляции DHCPv6 на R2.
+## Часть 5. Настройка и проверка ретрансляции DHCPv6 на R2
 В части 5 необходимо настроить и проверить ретрансляцию DHCPv6 на R2, позволяя PC-B получать адрес IPv6.
 ### Шаг 1. Включение PC-B и проверка адреса SLAAC, который он генерирует.
 C:\Users\Student> ipconfig /all
