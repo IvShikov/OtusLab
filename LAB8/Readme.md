@@ -65,32 +65,24 @@ Autoconfiguration, SLAAC)
  - Настройка маршрута по умолчанию на каждом маршрутизаторе, который указывает на IP-адрес G0/0/0 на другом маршрутизаторе.
  - Проверка того, что маршрутизация работает с помощью пинга адреса G0/0/1 R2 из R1.
  - Сохранение текущей конфигурации в файл загрузочной конфигурации.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P1_R1.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P1_R2.JPG)
+
 ## Часть 2. Проверка назначения адреса SLAAC от R1
 В части 2 мы убедимся, что узел PC-A получает адрес IPv6 с помощью метода SLAAC.
 Включим PC-A и убедимся, что сетевой адаптер настроен для автоматической настройки IPv6.
 Через несколько минут результаты команды ipconfig должны показать, что PC-A присвоил себе адрес из сети 2001:db8:1::/64.
 
-Ethernet adapter Ethernet 2:
-Connection-specific DNS Suffix . :
-IPv6 Address. . . . . . . . . . . : 2001:db8:acad: 1:5 c43:ee7c:2959:da68
-Temporary IPv6 Address. . . . . . : 2001:db8:acad: 1:3 c64:e4f 9:46 e 1:1 f23
-Link-local IPv6-адрес. . . . .: fe80። 5c43:ee7c:2959:да 68% 6
-IPv4-адрес. . . . . . . . . . . : 169.254.218.104
-Subnet Mask . . . . . . . . . . . : 255.255.0.0
-Default Gateway . . . . . . . . .: fe80።1%6
-
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P2_PCAcmd.JPG)
 
 Часть адреса с идентификатором хоста основана на физическом адресе компьютера (МАС-адресе интерфейса). 
-
-![]()
 
 ## Часть 3. Настройка и проверка сервера DHCPv6 на R1
 В части 3 выполняется настройка и проверка состояния DHCP-сервера на R1. Цель состоит в том, чтобы предоставить PC-A информацию о DNS-сервере и домене.
 ### Шаг 1. Более подробное изучение конфигурации PC-A.
- 
-
- - Выполнение команды **ipconfig /all** на PC-A и просмотр результата.
+  - Выполнение команды **ipconfig /all** на PC-A и просмотр результата.
 
 C:\Users\Student> ipconfig /all
 Windows IP Configuration
@@ -115,7 +107,8 @@ DNS-серверы . . . . . . . . . . . : fec0:0:0:ffff::1%1
 fec0:0:0:ffff::2%1
 fec0:0:0:ffff::3%1
 NetBIOS over Tcpip. . . . . . . . : Enabled
-![]()
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P3_S1_PCAipconf.JPG)
 
  - Обратили внимание, что основной DNS-суффикс отсутствует. Также обратили внимание на то, что предоставленные адреса DNS-сервера являются адресами «локального сайта anycast», а не одноадресные адреса, как ожидалось.
 ### Шаг 2. Настройка R1 для предоставления DHCPv6 без состояния для PC-A.
@@ -132,6 +125,8 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
  - Сохранили текущую конфигурацию в файл загрузочной конфигурации.
  - Перезапустили PC-A.
  - Проверили вывод ipconfig /all и обратили внимание на изменения.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P3_PCAafterDNS.JPG)
 
 C:\Users\Student> ipconfig /all
 Windows IP Configuration
@@ -175,6 +170,8 @@ R1(config-dhcp)# domain-name STATEFUL.com
 R1(config)# interface g0/0/0
 R1(config-if)# ipv6 dhcp server R2-STATEFUL
 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P4.JPG)
+
 ## Часть 5. Настройка и проверка ретрансляции DHCPv6 на R2
 В части 5 необходимо настроить и проверить ретрансляцию DHCPv6 на R2, позволяя PC-B получать адрес IPv6.
 ### Шаг 1. Включение PC-B и проверка адреса SLAAC, который он генерирует.
@@ -204,6 +201,8 @@ fec0:0:0:ffff::2%1
 fec0:0:0:ffff::3%1
 NetBIOS over Tcpip. . . . . . . . : Enabled
 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P5_S1_PCB.JPG)
+
 Обратили внимание на вывод, что используется префикс 2001:db8:acad:3::
 ### Шаг 2. Настройка R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1.
 
@@ -214,6 +213,9 @@ R2(config-if)# ipv6 nd managed-config-flag
 R2(config-if)# ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
 
  - Сохранили конфигурацию.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P5_S2_R2dhcp.JPG)
+
 ### Шаг 3. Попытка получить адрес IPv6 из DHCPv6 на PC-B.
  - Перезапустили PC-B.
  - Открыли командную строку на PC-B и выполните команду ipconfig /all и проверили выходные данные, чтобы увидеть результаты операции ретрансляции DHCPv6.
@@ -246,4 +248,8 @@ NetBIOS over Tcpip. . . . . . . . : Включен
 Список поиска DNS-суффиксов подключения:
 STATEFUL.com
 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P5_S3_PCBipconf.JPG)
+
  - Проверили подключение с помощью пинга IP-адреса интерфейса R0 G0/0/1.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P5_PCBpings.JPG)
