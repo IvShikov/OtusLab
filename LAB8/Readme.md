@@ -123,6 +123,9 @@ R1(config-if)# ipv6 nd other-config-flag
 R1(config-if)# ipv6 dhcp server R1-STATELESS
 
  - Сохранили текущую конфигурацию в файл загрузочной конфигурации.
+
+![]()
+ 
  - Перезапустили PC-A.
  - Проверили вывод ipconfig /all и обратили внимание на изменения.
 
