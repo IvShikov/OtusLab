@@ -186,17 +186,9 @@ STATELESS.com
 
 ## Часть 4. Настройка сервера DHCPv6 с сохранением состояния на R1
 В части 4 настраивается R1 для ответа на запросы DHCPv6 от локальной сети на R2.
- - Создали пул DHCPv6 на R1 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2. В составе пула задали DNS-сервер 2001:db8:acad: :254 и задали доменное имя STATEFUL.com.
-
-R1(config)# ipv6 dhcp pool R2-STATEFUL
-R1(config-dhcp)# address prefix 2001:db8:acad:3:aaa::/80
-R1(config-dhcp)# dns-server 2001:db8:acad::254
-R1(config-dhcp)# domain-name STATEFUL.com
-
+ - Создали пул DHCPv6 на R1 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2.
+ - В составе пула задали DNS-сервер 2001:db8:acad: :254 и задали доменное имя STATEFUL.com.
  - Назначили только что созданный пул DHCPv6 интерфейсу g0/0/0 на R1.
-
-R1(config)# interface g0/0/0
-R1(config-if)# ipv6 dhcp server R2-STATEFUL
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P4.JPG)
 
