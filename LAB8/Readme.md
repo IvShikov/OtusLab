@@ -129,36 +129,61 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
  - Перезапустили PC-A.
  - Проверили вывод ipconfig /all и обратили внимание на изменения.
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P3_PCAafterDNS.JPG)
-
 C:\Users\Student> ipconfig /all
+
 Windows IP Configuration
+
 Host Name . . . . . . . . . . . . : DESKTOP-3FR7RKA
+
 Primary Dns Suffix . . . . . . . :
+
 Node Type . . . . . . . . . . . . : Hybrid
+
 IP Routing Enabled. . . . . . . . : No
+
 WINS Proxy Enabled. . . . . . . . : No
+
 DNS Suffix Search List. . . . . . : STATELESS.com
+
 Ethernet adapter Ethernet0:
+
 Connection-specific DNS Suffix . : STATELESS.com
+
 Описание . . . . . . . . . . . : Intel(R) 82574L Gigabit Network Connection
+
 Physical Address. . . . . . . . . : 00-50-56-83-63-6D
+
 DHCP Enabled. . . . . . . . . . . : Yes
+
 Autoconfiguration Enabled . . . . : Yes
+
 IPv6 Address. . . . . . . . . . . : 2001:db8:acad:1:5c43:ee7c:2959:da68(Preferred)
+
 Temporary IPv6 Address. . . . . . : 2001:db8:acad:1:3c64:e4f9:46e1:1f23(Preferred)
+
 Link-local IPv6-адрес. . . . . : fe80::5c43:ee7c:2959:da68%6(Preferred)
+
 IPv4 Address. . . . . . . . . . . : 169.254.218.104(Preferred)
+
 Subnet Mask . . . . . . . . . . . : 255.255.0.0
+
 Default Gateway . . . . . . . . .: fe80።1%6
+
 DHCPv6 IAID . . . . . . . . . . . : 50334761
+
 DHCPv6 Client DUID. . . . . . . . : 00-01-00-01-24-F5-CE-A2-00-50-56-B3-63-6D
+
 DNS Servers . . . . . . . . . . . : 2001:db8:acad። 254
+
 NetBIOS over Tcpip. . . . . . . . : Enabled
+
 Список поиска DNS-суффиксов подключения:
 STATELESS.com
 
  - Протестировали подключение с помощью пинга IP-адреса интерфейса G0/1 R2.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P3_PCAafterDNS.JPG)
+
 ## Часть 4. Настройка сервера DHCPv6 с сохранением состояния на R1
 В части 4 настраивается R1 для ответа на запросы DHCPv6 от локальной сети на R2.
  - Создали пул DHCPv6 на R1 для сети 2001:db8:acad:3:aaa::/80. Это предоставит адреса локальной сети, подключенной к интерфейсу G0/0/1 на R2. В составе пула задали DNS-сервер 2001:db8:acad: :254 и задали доменное имя STATEFUL.com.
