@@ -128,13 +128,6 @@ R1(config-if)# ipv6 dhcp server R1-STATELESS
 ### Шаг 2. Настройка R2 в качестве агента DHCP-ретрансляции для локальной сети на G0/0/1.
 
  - Настроили команду **ipv6 dhcp relay** на интерфейсе R2 G0/0/1, указав адрес назначения интерфейса G0/0/0 на R1. Также настроили команду **managed-config-flag** .
-
-R2 (конфигурация) # интерфейс g0/0/1
-
-R2(config-if)# ipv6 nd managed-config-flag
-
-R2(config-if)# ipv6 dhcp relay destination 2001:db8:acad:2::1 g0/0/0
-
  - Сохранили конфигурацию.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB8/Lab8_P5_S2_R2dhcp.JPG)
