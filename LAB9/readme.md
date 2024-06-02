@@ -1,8 +1,8 @@
 # Лабораторная работа №9. Реализация DHCPv4 
 
-https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_Topology.JPG
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_Topology.JPG)
 
-
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_Vlan%20Table.JPG)
 
 # Задачи:
 ## Часть 1. Создание сети и настройка основных параметров устройства
