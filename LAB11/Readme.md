@@ -1,6 +1,6 @@
 # Лабораторная работа №11. Настройка протокола OSPFv2 для одной области
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB11/Lab11_Topology%20and%20Table.JPG)
 
 # Цели:
 ## Часть 1. Создание сети и настройка основных параметров устройства
@@ -83,5 +83,5 @@
 
 # Сводная таблица по интерфейсам маршрутизаторов
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB11/Lab11_Routing_table.JPG)
 
