@@ -1,8 +1,8 @@
 # Лабораторная работа №10. Конфигурация безопасности коммутатора
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_Topology.JPG)
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_Addressing_table.JPG)
 
 # Цели:
 ## Часть 1. Настройка основного сетевого устройства
