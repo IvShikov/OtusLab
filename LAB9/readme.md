@@ -141,6 +141,9 @@
  - Чтобы просмотреть сведения о пуле, выполнили команду **show ip dhcp pool** .
  - Выполнили команду **show ip dhcp bindings** для проверки установленных назначений адресов DHCP.
  - Выполнили команду **show ip dhcp server statistics** для проверки сообщений DHCP.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_DHCPv4_config_verification.JPG)
+
 ### Шаг 4. Попытка получить IP-адрес от DHCP на PC-A
  - Из командной строки компьютера PC-A выполнили команду **ipconfig /all.**
  - После завершения процесса обновления выполнили команду **ipconfig** для просмотра новой информации об IP-адресе.
