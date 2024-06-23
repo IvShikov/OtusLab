@@ -117,7 +117,9 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_TRunking_status_S1.JPG)
 
-Если бы ПК был подключен к сети с помощью DHCP, у него был бы IP-адрес ?
+Если бы ПК был подключен к сети с помощью DHCP, у него был бы автоматически сконфигурированный private IP-адрес APIPA из 169.254.XXX.XXX:
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_PCs_without_static.JPG)
 
 ## Часть 2. Настройка и проверка двух серверов DHCPv4 на R1
 В части 2 необходимо настроить и проверить сервер DHCPv4 на R1. Сервер DHCPv4 будет обслуживать две подсети, подсеть A и подсеть C.
