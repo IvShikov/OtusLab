@@ -157,13 +157,16 @@
  - Настроили команду **ip helper-address** на G0/0/1, указав IP-адрес G0/0/0 R1.
  - Сохранили конфигурацию.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_R2_DHCP_realy_agent.JPG)
 
 ### Шаг 2. Попытка получить IP-адрес от DHCP на PC-B.
  - Из командной строки компьютера PC-B выполнили команду **ipconfig /all**.
  - После завершения процесса обновления выполнили команду **ipconfig** для просмотра новой информации об IP-адресе.
  - Проверили подключение с помощью пинга IP-адреса интерфейса R1 G0/0/1.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_IP%20acquire_on%20PCB.JPG)
+
  - Выполнили **show ip dhcp binding** для R1 для проверки назначений адресов в DHCP.
  - Выполнили команду **show ip dhcp server statistics** для проверки сообщений DHCP.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB9/Lab9_Show_IP_DHCP_R1.JPG)
