@@ -86,15 +86,7 @@
  - Отключили согласование DTP F0/1 на S1 и S2.
  - Проверили с помощью команды **show interfaces**.
 
-S1# show interfaces f0/1 switchport | include Negotiation
-
-Negotiation of Trunking: Off
-
-S1# show interfaces f0/1 switchport | include Negotiation
-
-Negotiation of Trunking: Off
-
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S1cd.JPG)
 
 ### Шаг 2. Настройка портов доступа.
  - На S1 настроили F0/5 и F0/6 в качестве портов доступа и связали их с VLAN 10.
