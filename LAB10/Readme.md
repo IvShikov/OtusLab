@@ -62,6 +62,7 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P1S3.JPG)
 
+##
 ## Часть 2. Настройка и проверка двух серверов DHCPv4 на R1
 ##
 ### Шаг 1. Конфигурирование VLAN 10
@@ -73,6 +74,7 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P2.JPG)
 
+##
 ## Часть 3. Настройка безопасности коммутатора
 ##
 ### Шаг 1. Релизация магистральных соединений 802.1Q.
