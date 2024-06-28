@@ -148,7 +148,7 @@ Aging time: 60 мин.
  - Ограничили ненадёжный порт Fa0/18 на S2 пятью DHCP-пакетами в секунду.
  - Проверка DHCP Snooping на S2.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S5ad.JPG)
 
  - В командной строке на PC-B освободили, а затем - обновили IP-адрес.
 
