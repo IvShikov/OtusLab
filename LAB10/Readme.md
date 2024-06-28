@@ -156,9 +156,11 @@ C:\Users\Student> ipconfig /release
 
 C:\Users\Student> ipconfig /renew
 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S5e.JPG)
+
  - Проверили привязку отслеживания DHCP с помощью команды **show ip dhcp snooping binding**.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S5f.JPG)
 
 ### Шаг 6. Реализация PortFast и BPDU Guard.
  - Настроили PortFast на всех портах доступа, которые используются на обоих коммутаторах.
