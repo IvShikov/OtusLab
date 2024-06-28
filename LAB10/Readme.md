@@ -174,7 +174,13 @@ C:\Users\Student> ipconfig /renew
 ### Шаг 7. Проверка наличия сквозного подключения.
 Проверили PING-свзяь между всеми устройствами в таблице IP-адресации. В случае сбоя проверки связи может потребоваться отключить брандмауэр на хостах.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S7_PCAa.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S7_PCAb.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S7_PCBa.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB10/Lab10_P3S7_PCBb.JPG)
 
 ##
 ## **Вопросы для повторения:**
