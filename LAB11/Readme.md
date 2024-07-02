@@ -99,7 +99,9 @@
  - Ввод команды **show ip route ospf** на маршрутизаторе R2. Единственная информация о маршруте OSPF должна быть распространяемый по умолчанию маршрут R1.
  - Запуск Ping до адреса интерфейса R1 Loopback 1 из R2. Выполнение команды ping должно быть успешным.
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB11/Lab11_P3S2.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB11/Lab11_P3S2_deadint.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB11/Lab11_P3S2new.JPG)
 
 **Вопрос:** Почему стоимость OSPF для маршрута по умолчанию отличается от стоимости OSPF в R1 для сети 192.168.1.0/24? - Потому, что импортированному в OSPF статическому маршруту по умолчанию задан тип матрицы внешнего типа 2. И такая стоимость OSPF будет во всей сети OSPF. 
 
