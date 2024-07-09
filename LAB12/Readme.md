@@ -110,7 +110,7 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P4S1ac.JPG)
   
- - С помощью команды **show ip interface brief** выполнение проверки конфигурации подынтерфейса.
+ - С помощью команды **show ip interface brief** выполнение проверки конфигурации подинтерфейса.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P4S1d.JPG)
 
