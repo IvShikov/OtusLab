@@ -145,6 +145,10 @@ R1(config)# ip http authentication local
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P6S2.JPG)
 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P6_Https_20.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P6_HTTPS_172.JPG)
+
 ##
 ## Часть 7. Настройка и проверка списков контроля доступа (ACL)
 При проверке базового подключения компания требует реализации следующих политик безопасности:
@@ -156,6 +160,8 @@ R1(config)# ip http authentication local
 **Политика3.** Сеть Sales не может отправлять эхо-запросы ICMP в сети Operations или Management. Разрешены эхо-запросы ICMP к другим адресатам. 
 
 **Политика 4.** Cеть Operations не может отправлять ICMP эхозапросы в сеть Sales. Разрешены эхо-запросы ICMP к другим адресатам.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_Policies.JPG)
 
 ### Шаг 1. Анализ требований к сети и политике безопасности для планирования реализации ACL.
 ### Шаг 2. Разработка и применение расширенных списков доступа, которые будут соответствовать требованиям политики безопасности.
