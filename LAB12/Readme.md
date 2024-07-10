@@ -135,10 +135,16 @@ R1(config)# ip http authentication local
 ## Часть 6. Проверка подключения
 ### Шаг 1. Настройка узлов ПК.
 Адреса ПК можно посмотреть в таблице адресации.
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P6S1.JPG)
+
 ### Шаг 2. Выполение тестов. Эхо-запрос должен пройти успешно.
 **Примечание**. Возможно, придётся отключить брандмауэр ПК для работы ping 
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_Tests%20for%20echo.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P6S2.JPG)
+
 ##
 ## Часть 7. Настройка и проверка списков контроля доступа (ACL)
 При проверке базового подключения компания требует реализации следующих политик безопасности:
