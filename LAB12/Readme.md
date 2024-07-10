@@ -169,3 +169,13 @@ R1(config)# ip http authentication local
 Выполнение нижеуказанных тестов. Ожидаемые результаты показаны в таблице:
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_Testsesults_Ex.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_S3_PCA.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_S3_PCBping.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_S3_HTTPS20.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_S3_HTTPS172.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB12/Lab12_P7_S3_SSH.JPG)
