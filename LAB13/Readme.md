@@ -104,7 +104,7 @@ Total number of translations: 2
 
  - С PC-A запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2.
  
-
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCA_pingLoR2.JPG)
  
  - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
@@ -116,9 +116,13 @@ Pro Inside global Inside local Outside local Outside global
 226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1
 Total number of translations: 4
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_IPnatR1.JPG)
 
- - Предыдущая трансляция для PC-B всё ещё находится в таблице. Из S1 следует отправить эхо-запрос интерфейса Lo1 (209.165.200.1) на R2. На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - Предыдущая трансляция для PC-B всё ещё находится в таблице. Из S1 следует отправить эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
+
+![]()
+  
+ - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
