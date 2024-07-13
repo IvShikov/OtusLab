@@ -83,7 +83,11 @@ R1(config-if)# ip nat outside
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_natset.JPG)
 
 ### Шаг 2. Проверка конфигурации.
- - С PC-B запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2. На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
+ - С PC-B запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2.
+ 
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCB_pingLo1.JPG)
+ 
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations
 
@@ -92,11 +96,17 @@ Pro Inside global Inside local Outside local Outside global
 226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1 
 Total number of translations: 2
 
-Во что был транслирован внутренний локальный адрес PC-B?
- 
-Какой тип адреса NAT является переведенным адресом?
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_nattable.JPG)
 
- - С PC-A запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2. На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
+Во что был транслирован внутренний локальный адрес PC-B? - Во внутренний глобальный адрес 209.165.200.226.
+ 
+Какой тип адреса NAT является переведенным адресом? - Внутренний глобальный адрес.
+
+ - С PC-A запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2.
+ 
+
+ 
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations 
 Pro Inside global Inside local Outside local Outside global
