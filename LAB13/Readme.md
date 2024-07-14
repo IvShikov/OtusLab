@@ -143,7 +143,7 @@ Pro Inside global Inside local Outside local Outside global
   Map-Id(In): 1
 <output omitted>
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2e_R1nattransl.JPG)
 
  - Учитывая, что пул ограничен тремя адресами, NAT для пула адресов недостаточно для нашего приложения. Очистим преобразование NAT и статистику, перейдём к PAT.
 
