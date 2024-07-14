@@ -90,7 +90,7 @@ R1(config-if)# ip nat outside
  
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCB_pingLo1.JPG)
  
- - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translation**.
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_nattable.JPG)
 
@@ -104,7 +104,7 @@ R1(config-if)# ip nat outside
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCA_pingLoR2.JPG)
  
- - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translation**.
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_IPnatR1.JPG)
 
@@ -112,7 +112,7 @@ R1(config-if)# ip nat outside
 
 ![]()
   
- - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translation**.
+ - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
@@ -127,7 +127,7 @@ Total number of translations: 5
 
  - Теперь нужно запустить пинг R2 Lo1 из S2.
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2d_S1failp.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2d_S2_ping.JPG)
  
 На этот раз перевод завершается неудачей, и мы получаем эти сообщения (или аналогичные) на консоли R1. Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введём команду **show ip nat translations verbose**, и увидим, что данная команда не поддерживаеися в Cisco Packet Tracer.
 
