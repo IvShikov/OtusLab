@@ -236,24 +236,26 @@ R1# clear ip nat statistics
 R1(config)# no ip nat inside source list 1 pool PUBLIC_ACCESS overload 
 R1(config)# no ip nat pool PUBLIC_ACCESS
 
-![]()
-
 ### Шаг 5. Добавление команды PAT overload, указав внешний интерфейс.
 Добавим команду PAT, которая вызовет перегрузку внешнего интерфейса.
 
 R1(config)# ip nat inside source list 1 interface g0/0/0 overload  
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S4a5.JPG)
 
 ### Шаг 6. Тестирование и проверка конфигурации.
- - Проверим PAT, чтобы интерфейс работал. С PC-B запустим эхо-запрос интерфейса Lo1 (209.165.200.1) на R2. На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - Проверим PAT, чтобы интерфейс работал. С PC-B запустим эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
+ 
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_PCB.JPG)
+
+ - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
 209.165.200. 230:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1 
 Total number of translations: 1 
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_R1.JPG)
 
  - Сделаем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping** для отправки безостановочного ping на интерфейс Lo1 R2 (ping -t 209.165.200.1). На S1 и S2 выполним привилегированную команду **exec ping** 209.165.200.1 повторим 2000. Затем вернёмся к R1 и выполним команду **show ip nat translations**.
 
