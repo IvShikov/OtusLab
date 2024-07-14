@@ -128,7 +128,7 @@ Total number of translations: 5
  - Теперь нужно запустить пинг R2 Lo1 из S2. На этот раз перевод завершается неудачей, и мы получаем эти сообщения (или аналогичные) на консоли R1:
 
 Sep 23 15:43:55.562: %IOSXE-6-PLATFORM: R0/0: cpp_cp: QFP:0.0 Thread:000 TS:00000001473688385900 %NAT-6-ADDR_ALLOC_FAILURE: Address allocation failed; pool 1 may be exhausted [2]
- - Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введём команду **show ip nat translations verbose**, и увидим, что ответ будет 24 часа.
+ - Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введём команду **show ip nat translations verbose**, и увидим, что данная команда не поддерживаеися в Cisco Packet Tracer.
 
 R1# show ip nat translations verbose 
 Pro Inside global Inside local Outside local Outside global
@@ -166,7 +166,7 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S3_PCB.JPG)
  
- - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
@@ -176,32 +176,19 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
  
 Какой тип адреса NAT является переведенным адресом? - Inside global.
 
-Чем отличаются выходные данные команды **show ip nat translations** из упражнения NAT? - Нет назначенного перевода из перечисленных внутренних и внешних адресов. Все внутренние локальные адреса могут быть переведены для использования только одного внутреннего глобального адреса. 
+Чем отличаются выходные данные команды **show ip nat translation** из упражнения NAT? - Нет назначенного перевода из перечисленных внутренних и внешних адресов. Все внутренние локальные адреса могут быть переведены для использования только одного внутреннего глобального адреса. 
 
  - С PC-A запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
  
  ![](https://github.com/user-attachments/assets/38ff4c71-ab58-4d60-8fa0-f4794b5a7302)
  
- - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
-
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
-226:1 192.168.1. 2:1 209.165.200. 1:1 209.165.200. 1:1
-Total number of translations: 1
-
-Есть только одна трансляция. Отправили ping ещё раз, быстро вернулись к маршрутизатору и ввели команду **show ip nat translations verbose**. Можем увидеть, что данная команда не поддерживается Cisco Packet Tracer.
+ - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translation**. Видим, что есть только одна трансляция. Отправили ping ещё раз, быстро вернулись к маршрутизатору и ввели команду **show ip nat translations verbose**. Можем увидеть, что данная команда не поддерживается Cisco Packet Tracer.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
- - Сгенерируем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping**, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1), затем вернёмся к R1 и выполним команду **show ip nat translations**:
+ - Сгенерируем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping**, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1), затем вернёмся к R1 и выполним команду **show ip nat translation**:
    
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3c_PCAB.JPG)
-
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
-icmp 209.165.200.226:1 192.168.1.2:1 209.165.200.1:1 209.165.200.1:1 
-226:2 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:2 
-Total number of translations: 2 
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3c_R1.JPG)
 
@@ -211,7 +198,7 @@ Total number of translations: 2
 
  - PAT в пул является очень эффективным решением для малых и средних организаций. Тем не менее, есть неиспользуемые адреса IPv4, задействованные в этом сценарии. Мы перейдем к PAT с перегрузкой интерфейса, чтобы устранить эту трату IPv4 адресов. Остановим ping на PC-A и PC-B с помощью комбинации клавиш **Control-C**, затем очистим трансляции и статистику:
    
-R1# clear ip nat translations * 
+R1# clear ip nat translation * 
 
 R1# clear ip nat statistics 
 
@@ -236,7 +223,7 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
  
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_PCB.JPG)
 
- - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_R1.JPG)
 
@@ -248,7 +235,7 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_S1aS2.JPG) 
  
- - Затем вернёмся к R1 и выполним команду **show ip nat translations**.
+ - Затем вернёмся к R1 и выполним команду **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_R1.JPG)
 
@@ -283,7 +270,7 @@ R1(config)# ip nat inside source static 192.168.1.2 209.165.200.229
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S3_R2.JPG)
 
- - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations** и увидим статическое сопоставление и преобразование на уровне порта для входящих pings.
+ - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translation** и увидим статическое сопоставление и преобразование на уровне порта для входящих pings.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S3_R1.JPG)
 
