@@ -164,7 +164,7 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
 ##
  - С PC-A запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
  
- ![](https://github.com/user-attachments/assets/38ff4c71-ab58-4d60-8fa0-f4794b5a7302)
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3b.JPG)
  
  - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translation**. Видим, что есть только одна трансляция. Отправили ping ещё раз, быстро вернулись к маршрутизатору и ввели команду **show ip nat translations verbose**. Можем увидеть, что данная команда не поддерживается Cisco Packet Tracer.
 
