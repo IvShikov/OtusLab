@@ -60,15 +60,19 @@
 ### Шаг 1. Настройка NAT на R1 при помощи пула из трёх адресов 209.165.200.226-209.165.200.228. 
  - Настройка простого списка доступа, который определяет, какие хосты будут разрешены для трансляции. В этом случае все устройства в локальной сети R1 имеют право на трансляцию.
 
-R1(config)# access-list 1 permit 192.168.1.0 0.0.0.255
- - Создание пула NAT и указание ему имени и диапазона используемых адресов.
+R1(config)# access-list 1 permit 192.168.1.0 0.0.0.255 - Создание пула NAT и указание ему имени и диапазона используемых адресов.
 
-R1(config)# ip nat pool PUBLIC_ACCESS 209.165.200.226 209.165.200.228 netmask 255.255.255.248 
- - Настройка перевода, связывая ACL и пул с процессом преобразования.
+R1(config)# ip nat pool PUBLIC_ACCESS 209.165.200.226 209.165.200.228 netmask 255.255.255.248  - Настройка перевода, связывая ACL и пул с процессом преобразования.
  
 R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS 
 
-**Примечание:** Три очень важных момента. Во-первых, слово **«inside»** имеет решающее значение для работы такого рода NAT. Если опустить его, NAT не будет работать. Во-вторых, номер списка — это номер ACL, настроенный на предыдущем шаге. В-третьих, имя пула чувствительно к регистру.  
+**Примечание.** Следует обратить внимание на три очень важных момента: 
+
+Во-первых, слово **«inside»** имеет решающее значение для работы такого рода NAT. Если опустить его, NAT не будет работать. 
+
+Во-вторых, номер списка — это номер ACL, настроенный на предыдущем шаге. 
+
+В-третьих, имя пула чувствительно к регистру.  
  - Задание внутреннего (inside) интерфейса.
 
 R1(config)# interface g0/0/1
@@ -138,7 +142,7 @@ Total number of translations: 5
  - Теперь нужно запустить пинг R2 Lo1 из S2. На этот раз перевод завершается неудачей, и мы получаем эти сообщения (или аналогичные) на консоли R1:
 
 Sep 23 15:43:55.562: %IOSXE-6-PLATFORM: R0/0: cpp_cp: QFP:0.0 Thread:000 TS:00000001473688385900 %NAT-6-ADDR_ALLOC_FAILURE: Address allocation failed; pool 1 may be exhausted [2]
- - Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введите команду **show ip nat translations verbose**, и увидим, что ответ будет 24 часа.
+ - Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введём команду **show ip nat translations verbose**, и увидим, что ответ будет 24 часа.
 
 R1# show ip nat translations verbose 
 Pro Inside global Inside local Outside local Outside global
@@ -151,7 +155,8 @@ Pro Inside global Inside local Outside local Outside global
 
  - Учитывая, что пул ограничен тремя адресами, NAT для пула адресов недостаточно для нашего приложения. Очистим преобразование NAT и статистику, перейдём к PAT.
 
-R1# clear ip nat translations * 
+R1# clear ip nat translation * 
+
 R1# clear ip nat statistics
 
 ![]()
@@ -177,14 +182,10 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
  
  - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
-226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1
-Total number of translations: 1#
-
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
-Вопросы:
+**Вопросы:**
+
 Во что был транслирован внутренний локальный адрес PC-B? - В 209.165.200.226.
  
 Какой тип адреса NAT является переведенным адресом? - Inside global.
@@ -220,12 +221,12 @@ Total number of translations: 2
 
 Внутренний глобальный адрес одинаков для обоих сеансов. 
 
-Вопрос:
 Как маршрутизатор отслеживает, куда идут ответы? - Каждому порту назначается свой уникальный номер, все порты отличаются.
 
  - PAT в пул является очень эффективным решением для малых и средних организаций. Тем не менее, есть неиспользуемые адреса IPv4, задействованные в этом сценарии. Мы перейдем к PAT с перегрузкой интерфейса, чтобы устранить эту трату IPv4 адресов. Остановим ping на PC-A и PC-B с помощью комбинации клавиш **Control-C**, затем очистим трансляции и статистику:
    
 R1# clear ip nat translations * 
+
 R1# clear ip nat statistics 
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S3c_R1clear.JPG)
@@ -234,6 +235,7 @@ R1# clear ip nat statistics
 Наш список доступа (список доступа 1) по-прежнему корректен для сетевого сценария, поэтому нет необходимости воссоздавать его. Кроме того, внутренний и внешний интерфейсы не меняются. Чтобы начать работу с PAT к интерфейсу, очистим конфигурацию, удалив пул NAT и команду, связывающую ACL и пул вместе.
 
 R1(config)# no ip nat inside source list 1 pool PUBLIC_ACCESS overload 
+
 R1(config)# no ip nat pool PUBLIC_ACCESS
 
 ### Шаг 5. Добавление команды PAT overload, указав внешний интерфейс.
@@ -250,30 +252,17 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
 
  - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
-209.165.200. 230:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1 
-Total number of translations: 1 
-
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_R1.JPG)
 
  - Сделаем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping** для отправки безостановочного ping на интерфейс Lo1 R2 (ping -t 209.165.200.1).
  
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_PCAaB.JPG)
  
- - На S1 и S2 выполним привилегированную команду **exec ping** 209.165.200.1 повторим 2000.
+ - На S1 и S2 выполним привилегированную команду **ping** 209.165.200.1 с повтором 2000.
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_S1aS2.JPG) 
  
  - Затем вернёмся к R1 и выполним команду **show ip nat translations**.
-
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
-209.165.200. 230:3 192.168.1. 11:1 209.165.200. 1:1 209.165.200. 1:3 
-209.165.200. 230:2 192.168.1. 2:1 209.165.200. 1:1 209.165.200. 1:2 
-209.165.200. 230:4 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:4 
-209.165.200. 230:1 192.168.1. 12:1 209.165.200. 1:1 209.165.200. 1:1 
-Total number of translations: 4 
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_R1.JPG)
 
@@ -287,7 +276,8 @@ Total number of translations: 4
 **Примечание**. Конфигурация, которую собираемся завершить, не соответствует рекомендуемым практикам для шлюзов, подключенных к Интернету. Эта лаборатория полностью опускает стандартные методы безопасности, чтобы сосредоточиться на успешной конфигурации статического NAT. В производственной среде решающее значение для удовлетворения этого требования будет иметь тщательная координация между сетевой инфраструктурой и группами безопасности. 
 
 ### Шаг 1. На R1 очистка текущих трансляций и статистики.
-Откройте окно конфигурации
+В окне конфигурации выполним команды:
+
 R1# clear ip nat translation *
 
 R1# clear ip nat statistics 
@@ -300,10 +290,8 @@ R1(config)# ip nat inside source static 192.168.1.2 209.165.200.229
 ### Шаг 3. Тестирование и проверка конфигурации.
  - Проверим, что статический NAT работает. На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations** и увидим статическое сопоставление.
    
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.229 192.168.1.2 --- ---
-Total number of translations: 1
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S123_R1.JPG)
+
  - Таблица перевода показывает, что статическое преобразование действует. Проверим это, запустив ping  с R2 на 209.165.200.229. Пинги должны работать.
 **Примечание**. Возможно придётся отключить брандмауэр ПК для работы pings.
 
@@ -311,13 +299,7 @@ Total number of translations: 1
 
  - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations** и увидим статическое сопоставление и преобразование на уровне порта для входящих pings.
 
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.229 192.168.1.2 --- ---
-229:3 192.168.1. 2:3 209.165.200. 225:3 209.165.200. 225:3 209.165.200. 
-Total number of translations: 2
-
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S123_R1.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S3_R1.JPG)
 
 Это подтверждает, что статический NAT работает.
 
