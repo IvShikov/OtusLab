@@ -219,7 +219,7 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_S1aS2.JPG) 
  
- - Затем вернёмся к R1 и выполним команду **show ip nat translation**.
+ - Затем вернёмся к R1 и выполним команду **show ip nat translations**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_R1.JPG)
 
