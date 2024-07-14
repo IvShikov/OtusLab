@@ -191,14 +191,18 @@ Total number of translations: 1#
 
 Чем отличаются выходные данные команды **show ip nat translations** из упражнения NAT? - Нет назначенного перевода из перечисленных внутренних и внешних адресов. Все внутренние локальные адрема могут быть переведены для использования только одного внутреннего глобального адреса. 
 
- - С PC-A запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2. На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - С PC-A запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
+ 
+ ![](https://github.com/user-attachments/assets/38ff4c71-ab58-4d60-8fa0-f4794b5a7302)
+ 
+ - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
 226:1 192.168.1. 2:1 209.165.200. 1:1 209.165.200. 1:1
 Total number of translations: 1
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
 Есть только одна трансляция. Отправили ping ещё раз, быстро вернулись к маршрутизатору и ввели команду **show ip nat translations verbose**.
 
