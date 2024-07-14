@@ -202,8 +202,6 @@ Pro Inside global Inside local Outside local Outside global
 226:1 192.168.1. 2:1 209.165.200. 1:1 209.165.200. 1:1
 Total number of translations: 1
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
-
 Есть только одна трансляция. Отправили ping ещё раз, быстро вернулись к маршрутизатору и ввели команду **show ip nat translations verbose**.
 
 R1# show ip nat translations verbose 
@@ -211,12 +209,13 @@ Pro Inside global Inside local Outside local Outside global
 icmp 209.165.200.226:1 192.168.1.2:1 209.165.200.1:1 209.165.200.1:1 
   create: 09/23/19 16:57:22, use: 09/23/19 16:57:25, timeout: 00:01:00
 <output omitted>
-
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
 Можем увидеть, что время ожидания перевода было отменено с 24 часов до 1 минуты.
 
  - Сгенерируем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping**, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1), затем вернёмся к R1 и выполним команду **show ip nat translations**:
+   
+![]()
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
