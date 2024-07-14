@@ -168,12 +168,12 @@ R1(config)# no ip nat inside source list 1 pool PUBLIC_ACCESS
 
 R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload 
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S1a2.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S1a2.JPG)
 
 ### Шаг 3. Тестирование и проверка конфигурации.
  - Проверим, что PAT работает. С PC-B запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S3_PCB.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S3_PCB.JPG)
  
  - На R1 отобразили таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
@@ -182,7 +182,7 @@ Pro Inside global Inside local Outside local Outside global
 226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1
 Total number of translations: 1#
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4_S3_R1.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
 Вопросы:
 Во что был транслирован внутренний локальный адрес PC-B?
