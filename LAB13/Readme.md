@@ -90,7 +90,7 @@ R1(config-if)# ip nat outside
  
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCB_pingLo1.JPG)
  
- - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_nattable.JPG)
 
@@ -104,7 +104,7 @@ R1(config-if)# ip nat outside
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCA_pingLoR2.JPG)
  
- - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_IPnatR1.JPG)
 
@@ -112,7 +112,7 @@ R1(config-if)# ip nat outside
 
 ![]()
   
- - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translation**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
@@ -133,15 +133,7 @@ Total number of translations: 5
 
 ![]()
 
-Sep 23 15:43:55.562: %IOSXE-6-PLATFORM: R0/0: cpp_cp: QFP:0.0 Thread:000 TS:00000001473688385900 %NAT-6-ADDR_ALLOC_FAILURE: Address allocation failed; pool 1 may be exhausted [2]
  - Это ожидаемый результат, потому что выделено только 3 адреса, и мы попытались ping Lo1 с четырех устройств. Напомним, что NAT — это трансляция «один-в-один». Как много выделено трансляций? Введём команду **show ip nat translations verbose**, и увидим, что данная команда не поддерживаеися в Cisco Packet Tracer.
-
-R1# show ip nat translations verbose 
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.226 192.168.1.3 --- ---
-  create: 09/23/19 15:35:27, use: 09/23/19 15:35:27, timeout: 23:56:42
-  Map-Id(In): 1
-<output omitted>
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2e_R1nattransl.JPG)
 
