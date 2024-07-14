@@ -257,7 +257,15 @@ Total number of translations: 1
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_R1.JPG)
 
- - Сделаем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping** для отправки безостановочного ping на интерфейс Lo1 R2 (ping -t 209.165.200.1). На S1 и S2 выполним привилегированную команду **exec ping** 209.165.200.1 повторим 2000. Затем вернёмся к R1 и выполним команду **show ip nat translations**.
+ - Сделаем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping** для отправки безостановочного ping на интерфейс Lo1 R2 (ping -t 209.165.200.1).
+ 
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_PCAaB.JPG)
+ 
+ - На S1 и S2 выполним привилегированную команду **exec ping** 209.165.200.1 повторим 2000.
+ 
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_S1aS2.JPG) 
+ 
+ - Затем вернёмся к R1 и выполним команду **show ip nat translations**.
 
 R1# show ip nat translations
 Pro Inside global Inside local Outside local Outside global
@@ -267,7 +275,7 @@ Pro Inside global Inside local Outside local Outside global
 209.165.200. 230:1 192.168.1. 12:1 209.165.200. 1:1 209.165.200. 1:1 
 Total number of translations: 4 
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_R1.JPG)
 
 Теперь все внутренние глобальные адреса сопоставляются с IP-адресом интерфейса g0/0/0.
 
