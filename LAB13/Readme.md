@@ -92,13 +92,13 @@ R1(config-if)# ip nat outside
  - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_nattable.JPG)
-
+##
 **Вопросы:**
 
 Во что был транслирован внутренний локальный адрес PC-B? - Во внутренний глобальный адрес 209.165.200.226.
  
 Какой тип адреса NAT является переведенным адресом? - Внутренний глобальный адрес.
-
+##
  - С PC-A запуск эхо-запроса интерфейса Lo1 (209.165.200.1) на R2.
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCA_pingLoR2.JPG)
@@ -111,7 +111,7 @@ R1(config-if)# ip nat outside
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2c_S1ping.JPG)
   
- - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
+ - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2c_R1_nattransl1.JPG)
 
