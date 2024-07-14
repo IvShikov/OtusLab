@@ -170,7 +170,7 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3_S3_R1.JPG)
 
- - Сгенерируем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping**, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1), затем вернёмся к R1 и выполним команду **show ip nat translation**:
+ - Сгенерируем трафик с нескольких устройств для наблюдения PAT. На PC-A и PC-B используем параметр **-t** с командой **ping**, чтобы отправить безостановочный ping на интерфейс Lo1 R2 (ping -t 209.165.200.1), затем вернёмся к R1 и выполним команду **show ip nat translations**:
    
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3c_PCAB.JPG)
 
@@ -207,7 +207,7 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
  
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_PCB.JPG)
 
- - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translation**.
+ - На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6_R1.JPG)
 
@@ -219,7 +219,7 @@ R1(config)# ip nat inside source list 1 interface g0/0/0 overload
  
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_S1aS2.JPG) 
  
- - Затем вернёмся к R1 и выполним команду **show ip nat translations**.
+ - Затем вернёмся к R1 и выполним команду **show ip nat translation**.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P3S6b_R1.JPG)
 
@@ -245,7 +245,7 @@ R1# clear ip nat statistics
 R1(config)# ip nat inside source static 192.168.1.2 209.165.200.229 
 
 ### Шаг 3. Тестирование и проверка конфигурации.
- - Проверим, что статический NAT работает. На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translations** и увидим статическое сопоставление.
+ - Проверим, что статический NAT работает. На R1 отобразим таблицу NAT на R1 с помощью команды **show ip nat translation** и увидим статическое сопоставление.
    
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P4S123_R1.JPG)
 
