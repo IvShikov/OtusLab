@@ -110,7 +110,7 @@ R1(config-if)# ip nat outside
 
  - Предыдущая трансляция для PC-B всё ещё находится в таблице. Из S1 следует отправить эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2c_S1ping.JPG)
   
  - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
