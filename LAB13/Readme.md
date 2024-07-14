@@ -145,7 +145,7 @@ R1# clear ip nat translation *
 
 R1# clear ip nat statistics
 
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2f_R1clearnat.JPG)
 
 ## Часть 3. Настройка и проверка PAT для IPv4
 В части 3 необходимо настроить замену NAT на PAT в пул адресов, а затем - на PAT с помощью интерфейса.
