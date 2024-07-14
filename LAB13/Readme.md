@@ -114,16 +114,7 @@ R1(config-if)# ip nat outside
   
  - На R1 следует отобразить таблицу NAT на R1 с помощью команды **show ip nat translations**.
 
-R1# show ip nat translations
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.227 192.168.1.2 --- ---
---- 209.165.200.226 192.168.1.3 --- ---
---- 209.165.200.228 192.168.1.11 --- ---
-226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1
-228:0 192.168.1. 11:0 209.165.200. 1:0 209.165.200. 1:0 209.165.200. 1:0
-Total number of translations: 5 
-
-![]()
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_P2S2c_R1_nattransl1.JPG)
 
  - Теперь нужно запустить пинг R2 Lo1 из S2.
 
