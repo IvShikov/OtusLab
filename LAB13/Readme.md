@@ -92,14 +92,9 @@ R1(config-if)# ip nat outside
  
  - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
 
-R1# show ip nat translations
-
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.226 192.168.1.3 --- --- 
-226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1 
-Total number of translations: 2
-
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_R1_nattable.JPG)
+
+**Вопросы:**
 
 Во что был транслирован внутренний локальный адрес PC-B? - Во внутренний глобальный адрес 209.165.200.226.
  
@@ -110,14 +105,6 @@ Total number of translations: 2
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_PCA_pingLoR2.JPG)
  
  - На R1 отображение таблицы NAT на R1 с помощью команды **show ip nat translations**.
-
-R1# show ip nat translations 
-Pro Inside global Inside local Outside local Outside global
---- 209.165.200.227 192.168.1.2 --- ---
---- 209.165.200.226 192.168.1.3 --- ---
-227:1 192.168.1. 2:1 209.165.200. 1:1 209.165.200. 1:1
-226:1 192.168.1. 3:1 209.165.200. 1:1 209.165.200. 1:1
-Total number of translations: 4
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB13/Lab13_IPnatR1.JPG)
 
@@ -189,7 +176,7 @@ R1(config)# ip nat inside source list 1 pool PUBLIC_ACCESS overload
  
 Какой тип адреса NAT является переведенным адресом? - Inside global.
 
-Чем отличаются выходные данные команды **show ip nat translations** из упражнения NAT? - Нет назначенного перевода из перечисленных внутренних и внешних адресов. Все внутренние локальные адрема могут быть переведены для использования только одного внутреннего глобального адреса. 
+Чем отличаются выходные данные команды **show ip nat translations** из упражнения NAT? - Нет назначенного перевода из перечисленных внутренних и внешних адресов. Все внутренние локальные адреса могут быть переведены для использования только одного внутреннего глобального адреса. 
 
  - С PC-A запустили эхо-запрос интерфейса Lo1 (209.165.200.1) на R2.
  
