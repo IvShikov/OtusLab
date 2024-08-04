@@ -87,7 +87,7 @@
  
  - На R1 выполнили команду **show cdp entry S1**.
 
- ![]()
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P2e.JPG)
 
 **Вопрос:** Какие дополнительные сведения доступны теперь?
 
