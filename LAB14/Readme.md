@@ -75,7 +75,7 @@
 
  - На R1 использовали команду **show cdp entry S1**, чтобы определить версию IOS, используемую на S1.
 
- ![]()
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P2ab.JPG)
  
 **Вопрос:** Какая версия IOS используется на  S1?
 
