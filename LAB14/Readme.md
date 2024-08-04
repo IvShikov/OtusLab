@@ -106,9 +106,11 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3btest.JPG)
 
-Но доступна другая команда с данными всех подключений:
+Но доступна другие команды с детвлями всех подключений:
 
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3b.JPG)
+
+ ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3banother.JPG)
  
 **Вопрос:** Что такое chassis ID  для коммутатора S2?
 
