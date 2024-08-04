@@ -106,13 +106,13 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3btest.JPG)
 
-Но доступна другие команды с детвлями всех подключений:
+Но доступны другие команды с деталями всех подключений:
 
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3b.JPG)
 
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P3banother.JPG)
  
-**Вопрос:** Что такое chassis ID  для коммутатора S2?
+**Вопрос:** Что такое chassis ID  для коммутатора S2? - МАС-адрес.
 
  - Соединились через консоль на всех устройствах и использовали команды LLDP, необходимые для отображения топологии физической сети только из выходных данных команды **show**.
 
