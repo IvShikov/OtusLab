@@ -73,6 +73,7 @@
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P2ab.JPG)
 
 **Вопрос:** Сколько интерфейсов участвует в объявлениях CDP? -3, 2 из которых выключены, 1 (GigabitEthernet0/0/1) - активен.
+
 **Вопрос:** Какая версия IOS используется на  S1?- Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.0(2)SE4, RELEASE SOFTWARE (fc1)
 
  - На S1 использовали команду **show cdp traffic**, чтобы определить, сколько пакетов CDP было выданных.
