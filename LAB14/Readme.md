@@ -59,4 +59,35 @@
 
    ![]()
 
-   
+##
+## Часть 2. Обнаружение сетевых ресурсов с помощью протокола CDP
+На устройствах Cisco протокол CDP включен по умолчанию. Нужно воспользоваться CDP, чтобы обнаружить порты, к которым подключены кабели.
+
+Откройте окно конфигурации
+
+ - На R1 использовали команду **show cdp**, чтобы определить, сколько интерфейсов включено CDP, сколько из них включено и сколько отключено.
+ 
+**Вопрос:** Сколько интерфейсов участвует в объявлениях CDP? Какие из них активны?
+
+ - На R1 использовали команду **show cdp**, чтобы определить версию IOS, используемую на S1.
+
+R1 # show cdp entry  S1
+-------------------------
+Device ID: S1
+Entry address(es):
+Platform: cisco WS-C2960+24LC-L, Capabilities: Switch IGMP 
+Interface: GigabitEthernet0/0/1, Port ID (outgoing port): FastEthernet0/5
+Holdtime : 125 sec
+
+Version :
+Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M), Version 15.2(4)E8, RELEASE SOFTWARE (fc3) 
+Technical Support: http://www.cisco.com/techsupport
+Copyright (c) 1986-2019 by Cisco Systems, Inc.
+Compiled Fri 15-Mar-19 17:28 by prod_rel_team 
+
+advertisement version: 2
+VTP Management Domain: ''
+Native VLAN: 1
+Duplex: full
+Вопрос:
+Какая версия IOS используется на  S1?
