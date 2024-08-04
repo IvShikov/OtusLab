@@ -45,7 +45,9 @@
  - Создание баннера с предупреждением о запрете несанкционированного доступа к устройству.
  - Сохранение текущей конфигурации в файл загрузочной конфигурации.
 
-   ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_R1_basic%20settings.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_R1_basic%20settings.JPG)
+
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/R1_IPs%20config.JPG)
    
 ### Шаг 3. Настройка базовых параметров каждого коммутатора.
  - Назначение коммутатору имени устройства.
@@ -57,7 +59,9 @@
  - Создание баннера с предупреждением о запрете несанкционированного доступа к устройству.
  - Сохранение текущей конфигурации в файл загрузочной конфигурации.
 
-   ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_Switches%20basic%20settings.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_Switches%20basic%20settings.JPG)
+
+![]()
 
 ##
 ## Часть 2. Обнаружение сетевых ресурсов с помощью протокола CDP
