@@ -142,13 +142,13 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4S4a.JPG)
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4S4atable.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4_tableS1a2.JPG)
 
  - Настроили S1 и S2 в качестве клиентов NTP. Использовали соответствующие команды NTP для получения времени от интерфейса G0/0/1 R1, а также - для периодического обновления календаря или аппаратных часов коммутатора.
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4S45_S1.JPG)
 
-![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4S45_S2.JPG)
+![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4beforeS5forS2.JPG)
 
 ### Шаг 5. Проверка настройки NTP.
  - Использовали команду **show**, чтобы убедиться, что S1 и S2 синхронизированы с R1.
@@ -161,7 +161,7 @@
 
 ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_P4S5ab_R1.JPG)
 
-**Вопрос для повторения:** Для каких интерфейсов в пределах сети не следует использовать протоколы обнаружения сетевых ресурсов? 
+**Вопрос для повторения:** Для каких интерфейсов в пределах сети не следует использовать протоколы обнаружения сетевых ресурсов? - На тех, которые выходят на внешние сети, поскольку эти протоколы предоставляют данные о внутренней сети. Данная информация может позволить хакерам получить ценную информацию о внутренней сети и может быть использована для несанкционированного доступа к сети.
 
 ## Сводная таблица по интерфейсам маршрутизаторов
  ![](https://github.com/IvShikov/OtusLab/blob/main/LAB14/Lab14_Routing%20table%20general.JPG)
